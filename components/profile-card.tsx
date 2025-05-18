@@ -13,6 +13,7 @@ export function ProfileCard() {
               width={128}
               height={128}
               className="object-cover"
+              priority
             />
           </div>
         </div>

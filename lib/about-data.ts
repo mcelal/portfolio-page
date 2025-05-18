@@ -1,46 +1,46 @@
 export interface Education {
-  institution: string
-  degree: string
-  period: string
+  institution: string;
+  degree: string;
+  period: string;
 }
 
 export interface Experience {
-  company: string
-  position: string
-  period: string
-  description: string
-  technologies: string[] // Added technologies array
+  company: string;
+  position: string;
+  period: string;
+  description: string;
+  technologies: string[]; // Added technologies array
 }
 
 export interface Skill {
-  name: string
-  level: number // Value between 1-5
+  name: string;
+  level: number; // Value between 1-5
 }
 
 export interface SkillCategory {
-  name: string
-  skills: Skill[]
+  name: string;
+  skills: Skill[];
 }
 
 export interface SocialLink {
-  platform: string
-  url: string
-  icon?: string
+  platform: string;
+  url: string;
+  icon?: string;
 }
 
 export interface AboutData {
-  name: string
-  title: string
-  bio: string[]
-  photo?: string
-  location: string
-  email: string
-  website: string
-  education: Education[]
-  experience: Experience[]
-  skillCategories: SkillCategory[]
-  interests: string[]
-  socialLinks: SocialLink[]
+  name: string;
+  title: string;
+  bio: string[];
+  photo?: string;
+  location: string;
+  email: string;
+  website: string;
+  education: Education[];
+  experience: Experience[];
+  skillCategories: SkillCategory[];
+  interests: string[];
+  socialLinks: SocialLink[];
 }
 
 export const aboutData: AboutData = {
@@ -50,10 +50,10 @@ export const aboutData: AboutData = {
     "I'm a backend-focused software developer. I build API-driven systems using Laravel, with a strong emphasis on clean code and testing.",
     "I enjoy creating side projects that solve real-world problems.",
   ],
-  photo: "/placeholder.svg?height=300&width=300",
+  photo: "/images/profile.jpeg",
   location: "İstanbul, Turkey",
   email: "info@mcelal.com",
-  website: "https://mcelal.dev",
+  website: "https://mcelal.com",
   education: [
     {
       institution: "AFYON KOCATEPE UNIVERSITY",
@@ -63,28 +63,54 @@ export const aboutData: AboutData = {
   ],
   experience: [
     {
-      company: "XYZ Technology",
+      company: "Macellan",
       position: "Senior Back-End Developer",
-      period: "2020-Present",
+      period: "2021-Present",
       description:
         "Developing and maintaining web applications using Laravel and Vue.js. Leading a team of developers and implementing best practices for scalable applications.",
-      technologies: ["Laravel", "Vue.js", "MySQL", "Redis", "Docker", "AWS", "Git", "CI/CD"],
+      technologies: [
+        "Laravel",
+        "Vue",
+        "MySQL",
+        "Redis",
+        "Docker",
+        "Google Cloud",
+        "Git",
+        "CI/CD",
+      ],
     },
     {
-      company: "ABC Software",
+      company: "ESC Teknoloji",
       position: "Back-End Developer",
-      period: "2017-2020",
+      period: "2017-2021",
       description:
         "Worked on various web projects using PHP and Laravel. Implemented RESTful APIs, database optimizations, and integrated third-party services.",
-      technologies: ["PHP", "Laravel", "JavaScript", "MySQL", "REST API", "jQuery", "Bootstrap"],
+      technologies: [
+        "PHP",
+        "Laravel",
+        "Codeigniter",
+        "JavaScript",
+        "MySQL",
+        "REST API",
+        "Vue",
+        "RabbitMQ",
+        "React Native",
+      ],
     },
     {
-      company: "DEF Digital",
-      position: "Junior Developer",
-      period: "2015-2017",
+      company: "Abanoz Medya",
+      position: "Fullstack Developer",
+      period: "2016-2017",
       description:
         "Started as a junior developer working on web applications. Gained experience in PHP, HTML, CSS, and JavaScript. Assisted in building and maintaining client websites.",
-      technologies: ["PHP", "HTML", "CSS", "JavaScript", "WordPress", "CodeIgniter", "MySQL"],
+      technologies: [
+        "PHP",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "CodeIgniter",
+        "MySQL",
+      ],
     },
   ],
   skillCategories: [
@@ -93,7 +119,7 @@ export const aboutData: AboutData = {
       skills: [
         { name: "PHP", level: 5 },
         { name: "JavaScript", level: 4 },
-        { name: "HTML/CSS", level: 4 },
+        { name: "HTML/CSS", level: 5 },
         { name: "SQL", level: 4 },
       ],
     },
@@ -103,7 +129,7 @@ export const aboutData: AboutData = {
         { name: "Laravel", level: 5 },
         { name: "Vue.js", level: 4 },
         { name: "Bootstrap", level: 4 },
-        { name: "Tailwind CSS", level: 4 },
+        { name: "Tailwind CSS", level: 3 },
       ],
     },
     {
@@ -123,6 +149,8 @@ export const aboutData: AboutData = {
     "Database Optimization",
     "DevOps",
     "Continuous Learning",
+    "Self Hosting",
+    "IoT",
   ],
   socialLinks: [
     {
@@ -131,11 +159,11 @@ export const aboutData: AboutData = {
     },
     {
       platform: "LinkedIn",
-      url: "https://linkedin.com/in/mehmetcelalkara",
+      url: "https://linkedin.com/in/mcelal",
     },
     {
-      platform: "Twitter",
-      url: "https://twitter.com/mehmetcelalkara",
+      platform: "X",
+      url: "https://x.com/mCelal",
     },
   ],
-}
+};

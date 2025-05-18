@@ -1,9 +1,11 @@
-import { aboutData } from "@/lib/about-data"
+import { aboutData } from "@/lib/about-data";
 
 export function ContactSection() {
   return (
     <div className="space-y-6">
-      <h2 className="text-xl font-bold text-emerald-600 dark:text-green-400">$ contact --send</h2>
+      <h2 className="text-xl font-bold text-emerald-600 dark:text-green-400">
+        $ contact --send
+      </h2>
       <form className="space-y-4">
         <div>
           <label htmlFor="name" className="block text-sm mb-1">
@@ -80,5 +82,5 @@ export function ContactSection() {
         </ul>
       </div>
     </div>
-  )
+  );
 }

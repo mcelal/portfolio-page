@@ -1,3 +1,5 @@
+"use client"
+
 import { ExternalLink, Github, ArrowUpRight } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -14,9 +16,17 @@ export interface ProjectProps {
   category: string
 }
 
-export function ProjectCard({ project }: { project: ProjectProps }) {
+interface ProjectCardProps {
+  project: ProjectProps
+  onClick: (project: ProjectProps) => void
+}
+
+export function ProjectCard({ project, onClick }: ProjectCardProps) {
   return (
-    <div className="border border-gray-200 dark:border-gray-700 rounded-md p-4 hover:border-emerald-500 dark:hover:border-green-500 transition-colors bg-gray-50 dark:bg-gray-800 group">
+    <div
+      className="border border-gray-200 dark:border-gray-700 rounded-md p-4 hover:border-emerald-500 dark:hover:border-green-500 transition-colors bg-gray-50 dark:bg-gray-800 group cursor-pointer"
+      onClick={() => onClick(project)}
+    >
       {project.image && (
         <div className="mb-4 overflow-hidden rounded-md border border-gray-200 dark:border-gray-700 aspect-video relative">
           <Image
@@ -35,22 +45,27 @@ export function ProjectCard({ project }: { project: ProjectProps }) {
       <p className="text-gray-600 dark:text-gray-400 mb-3 line-clamp-2">{project.description}</p>
 
       <div className="flex gap-2 flex-wrap mb-4">
-        {project.technologies.map((tech) => (
+        {project.technologies.slice(0, 3).map((tech) => (
           <span key={tech} className="px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded text-xs">
             {tech}
           </span>
         ))}
+        {project.technologies.length > 3 && (
+          <span className="px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded text-xs">
+            +{project.technologies.length - 3}
+          </span>
+        )}
       </div>
 
       {project.features && project.features.length > 0 && (
         <div className="mb-4">
           <h4 className="text-sm font-semibold mb-1 text-gray-700 dark:text-gray-300">Features:</h4>
           <ul className="text-xs text-gray-600 dark:text-gray-400 pl-4 list-disc">
-            {project.features.slice(0, 3).map((feature, index) => (
+            {project.features.slice(0, 2).map((feature, index) => (
               <li key={index}>{feature}</li>
             ))}
-            {project.features.length > 3 && (
-              <li className="text-emerald-600 dark:text-green-400">+ {project.features.length - 3} more...</li>
+            {project.features.length > 2 && (
+              <li className="text-emerald-600 dark:text-green-400">+ {project.features.length - 2} more...</li>
             )}
           </ul>
         </div>
@@ -65,6 +80,7 @@ export function ProjectCard({ project }: { project: ProjectProps }) {
               rel="noopener noreferrer"
               className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors"
               aria-label={`${project.title} GitHub repository`}
+              onClick={(e) => e.stopPropagation()}
             >
               <Github className="h-5 w-5" />
             </Link>
@@ -76,19 +92,22 @@ export function ProjectCard({ project }: { project: ProjectProps }) {
               rel="noopener noreferrer"
               className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors"
               aria-label={`${project.title} live demo`}
+              onClick={(e) => e.stopPropagation()}
             >
               <ExternalLink className="h-5 w-5" />
             </Link>
           )}
         </div>
-        <Link
-          href={project.demo || project.github || "#"}
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          onClick={(e) => {
+            e.stopPropagation()
+            onClick(project)
+          }}
           className="text-emerald-600 dark:text-green-400 hover:underline text-sm inline-flex items-center"
+          aria-label={`View details for ${project.title}`}
         >
           Details <ArrowUpRight className="ml-1 h-3 w-3" />
-        </Link>
+        </button>
       </div>
     </div>
   )

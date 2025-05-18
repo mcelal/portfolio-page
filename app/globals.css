@@ -139,3 +139,28 @@ body {
 .prose pre {
   @apply bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200;
 }
+
+/* Modal için gerekli CSS ekleyin (dosyanın sonuna ekleyin) */
+
+/* Modal styles */
+.fixed.inset-0.z-50 {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 50;
+}
+
+/* Ensure modal is properly centered */
+.fixed.inset-0.z-50.flex.items-center.justify-center {
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+/* Prevent body scrolling when modal is open */
+body.overflow-hidden {
+  overflow: hidden;
+  padding-right: var(--scrollbar-width, 0px); /* Prevent layout shift */
+}

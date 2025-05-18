@@ -1,4 +1,4 @@
-import type { ProjectProps } from "@/components/project-card"
+import type { ProjectProps } from "@/components/project-card";
 
 export const projects: ProjectProps[] = [
   {
@@ -6,8 +6,14 @@ export const projects: ProjectProps[] = [
     title: "Scrum Batak - Planning Poker",
     description:
       "Real-time planning poker application for agile teams. Helps teams estimate work items collaboratively during sprint planning.",
-    technologies: ["Vue.js", "Socket.io", "Tailwind CSS", "Node.js"],
-    image: "/placeholder.svg?height=200&width=400",
+    technologies: [
+      "Vue.js",
+      "Supabase",
+      "Socket.io",
+      "Tailwind CSS",
+      "Node.js",
+    ],
+    image: "/images/ss-ScrumBatak.png",
     github: "https://github.com/mcelal/planning-batak",
     demo: "https://batak.mcelal.dev",
     features: [
@@ -22,6 +28,23 @@ export const projects: ProjectProps[] = [
   },
   {
     id: 2,
+    title: "E-Commerce Accounting System",
+    description:
+      "Comprehensive pre-accounting application with e-commerce platform integrations. Streamlines financial operations for online businesses.",
+    technologies: ["Laravel", "Vue.js", "MySQL", "Redis", "REST API", "Docker"],
+    image: "/images/ss-muhasebe.png",
+    features: [
+      "Invoice management",
+      "Warehouse & inventory tracking",
+      "E-commerce platform integration",
+      "Automated financial reporting",
+      "Multi-store support",
+      "Real-time stock monitoring",
+    ],
+    category: "Business Tools",
+  },
+  {
+    id: 3,
     title: "Multi-Tenant CRM",
     description:
       "Laravel-based multi-tenancy boilerplate with Filament admin panel. Designed for creating custom CRM solutions with isolated client environments.",
@@ -39,13 +62,14 @@ export const projects: ProjectProps[] = [
     category: "Web Applications",
   },
   {
-    id: 3,
+    id: 4,
     title: "LyricCMS",
     description:
       "Basic lyrics management system built with CodeIgniter. Allows users to create, manage, and share song lyrics.",
     technologies: ["PHP", "CodeIgniter", "MySQL", "Bootstrap"],
-    image: "/placeholder.svg?height=200&width=400",
+    image: "/images/ss-sarki.png",
     github: "https://github.com/mcelal/lyricCMS",
+    demo: "https://sarki.mcelal.com",
     features: [
       "Lyrics database",
       "Artist management",
@@ -57,11 +81,16 @@ export const projects: ProjectProps[] = [
     category: "Web Applications",
   },
   {
-    id: 4,
+    id: 5,
     title: "Hackintosh Clover Config",
     description:
       "Collection of Clover configuration files for various Hackintosh systems. Helps users set up macOS on non-Apple hardware.",
-    technologies: ["Clover Bootloader", "macOS", "Shell", "Hardware Configuration"],
+    technologies: [
+      "Clover Bootloader",
+      "macOS",
+      "Shell",
+      "Hardware Configuration",
+    ],
     image: "/placeholder.svg?height=200&width=400",
     github: "https://github.com/mcelal/Hackintosh-Clover-Config",
     features: [
@@ -75,7 +104,7 @@ export const projects: ProjectProps[] = [
     category: "System Tools",
   },
   {
-    id: 5,
+    id: 6,
     title: "TeklifApp",
     description:
       "Simple quote preparation system developed with Laravel and Vue.js. Helps businesses create and manage client quotes efficiently.",
@@ -92,79 +121,8 @@ export const projects: ProjectProps[] = [
     ],
     category: "Business Tools",
   },
-  {
-    id: 6,
-    title: "Foriba API Integration",
-    description:
-      "PHP SDK for Foriba e-Invoice and e-Archive services. Simplifies integration with Turkish electronic invoicing systems.",
-    technologies: ["PHP", "REST API", "XML", "SOAP"],
-    image: "/placeholder.svg?height=200&width=400",
-    github: "https://github.com/mcelal/foribaapi",
-    features: [
-      "e-Invoice creation",
-      "e-Archive integration",
-      "Document validation",
-      "Digital signature support",
-      "Response handling",
-      "Error management",
-    ],
-    category: "API Integrations",
-  },
-  {
-    id: 7,
-    title: "E-Commerce Platform",
-    description:
-      "Modern e-commerce platform. Includes product management, cart operations, payment integration, and user management features.",
-    technologies: ["Laravel", "Vue.js", "MySQL", "Redis", "Docker"],
-    image: "/placeholder.svg?height=200&width=400",
-    github: "https://github.com/mcelal/ecommerce",
-    demo: "https://demo-ecommerce.example.com",
-    features: [
-      "Product catalog and search",
-      "User accounts and profiles",
-      "Cart and favorites",
-      "Payment integration (Stripe, PayPal)",
-      "Order tracking",
-      "Admin panel",
-    ],
-    category: "Web Applications",
-  },
-  {
-    id: 8,
-    title: "Content Management System",
-    description:
-      "Customizable content management system. Includes blog posts, pages, media management, and user authorization features.",
-    technologies: ["Laravel", "Alpine.js", "MySQL", "Tailwind CSS"],
-    image: "/placeholder.svg?height=200&width=400",
-    github: "https://github.com/mcelal/cms",
-    demo: "https://demo-cms.example.com",
-    features: [
-      "WYSIWYG editor",
-      "SEO optimization",
-      "Multi-language support",
-      "Media library",
-      "User authorization",
-      "Statistics and reports",
-    ],
-    category: "Web Applications",
-  },
-  {
-    id: 9,
-    title: "API Service",
-    description: "API service developed with microservice architecture. High-performance, scalable, and secure.",
-    technologies: ["Laravel", "PostgreSQL", "Redis", "Docker", "Kubernetes"],
-    image: "/placeholder.svg?height=200&width=400",
-    github: "https://github.com/mcelal/api-service",
-    features: [
-      "JWT authentication",
-      "Rate limiting",
-      "Comprehensive documentation",
-      "Versioning",
-      "Logging and monitoring",
-      "Automated testing and deployment",
-    ],
-    category: "Backend",
-  },
-]
+];
 
-export const projectCategories = Array.from(new Set(projects.map((project) => project.category)))
+export const projectCategories = Array.from(
+  new Set(projects.map((project) => project.category)),
+);
